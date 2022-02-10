@@ -1,0 +1,702 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&family=Noto+Sans+KR&display=swap");
+
+:root {
+  /* 색상 */
+  --main-purple: rgb(90, 21, 124);
+  --white-color: rgb(248, 248, 248);
+  --gray-color: rgb(140, 140, 140);
+
+  /* 폰트 사이즈 */
+  font-family: "Roboto", sans-serif;
+  --xxlarge-font: 32px;
+  --xlarge-font: 28px;
+  --large-font: 20px;
+  --medium-font: 16px;
+  --small-font: 14px;
+  --xsmall-font: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 1050px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  all: unset;
+}
+
+.pop {
+  font-size: var(--small-font);
+  background-color: var(--main-purple);
+  color: var(--white-color);
+  width: 100%;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0px 1px 10px rgb(245, 245, 245);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  /* 처음엔 justify-content 를 space-between 으로 사용함 이게 맞는 것 같아서,
+    근데 아렇게 쓰니까 양쪽 여백 관리가 안됨..s*/
+}
+
+.info .info_delivery {
+  width: 120px;
+  height: 22px;
+  padding: 8px 0px 0px 0px;
+  margin-right: 780px;
+  /* 이렇게 하나하나 크기를 지정하는게 맞나? 너무 바보같은데.. 더 좋은 방법이 있을 거 같은뎁*/
+}
+
+.info .info_right {
+  display: flex;
+  margin: 0px;
+  font-size: var(--xsmall-font);
+  white-space: nowrap;
+}
+
+.info .info_right > li {
+  padding: 8px 0px 12px 12px;
+}
+
+.info .info_right li:nth-child(1) a {
+  color: var(--main-purple);
+}
+
+.info_cc {
+  position: relative;
+}
+/* info_cclist 가 넘어서 감 absolute 위치 지정을 위해서는 부모가 relative 여야함 */
+
+.info_cclist {
+  border: 1px solid rgb(220, 220, 220);
+  padding: 8px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  z-index: 2;
+  height: 140px;
+  display: none;
+}
+
+.info_cc:hover .info_cclist {
+  display: flex;
+}
+
+.info_cclist ul {
+  height: 100%;
+  /* 상위 div박스에 height 지정해주고 여기엔 100% and space-between */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info_cclist ul > li {
+  color: rgb(73, 73, 73);
+}
+
+.mainlogo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mainlogo img {
+  width: 107px;
+  margin-top: -20px;
+  /* Maring-top 에 -20px 준 이유: 원래 사이트에서는 로고 위에 여백이 없는데 이미지를 그대로 따오다보니 윗부분 여백이 생겨서 없애기 위해 */
+}
+
+.categories {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  /* fixed 를 쓰는건 맞는거같은데 흠 */
+}
+
+.categories .icon_all {
+  width: 16px;
+  padding-right: 10px;
+}
+
+.categories li {
+  padding: 10px 0px;
+  white-space: nowrap;
+}
+
+/* 카테고리 바로 아래 li 들 중에 1 번쨰부터 5번째까지만 */
+.categories > li:nth-child(-n + 5) {
+  padding: 15px 34px;
+}
+
+.categories li:nth-child(1) {
+  padding-left: 0px;
+}
+
+.categories li:nth-child(-n + 5):hover {
+  color: var(--main-purple);
+  text-decoration: underline;
+}
+
+.categories .search input {
+  background-color: rgb(248, 248, 248);
+  border: 0.3px solid rgb(245, 245, 245);
+  border-radius: 15px;
+  width: 150px;
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 80px;
+  margin-bottom: 5px;
+  font-size: var(--xsmall-font);
+}
+
+.categories .search input:focus {
+  background-color: rgb(253, 253, 253);
+  outline: none;
+}
+
+.categories .search img {
+  position: relative;
+  top: 10px;
+  right: 40px;
+  width: 30px;
+}
+
+.categories .categories_right {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+}
+
+/* main */
+.quick_nav {
+  width: 80px;
+  position: absolute;
+  top: 510px;
+  right: 30px;
+}
+
+.quick_pic img {
+  width: 100%;
+}
+
+.quick_text ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--xsmall-font);
+  border: 0.5px solid rgb(180, 180, 180);
+}
+
+.quick_text ul li {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0px;
+  width: 100%;
+  border-bottom: 0.5px solid rgb(180, 180, 180);
+}
+
+.quick_text ul li:last-child {
+  border: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.slide_box {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.main .slide_list {
+  display: flex;
+  margin-left: -230px;
+}
+
+.main .slide_box .prevBtn {
+  display: none;
+  position: absolute;
+  top: 160px;
+  left: 100px;
+  cursor: pointer;
+}
+
+.main .slide_box .nextBtn {
+  display: none;
+  position: absolute;
+  top: 160px;
+  right: 100px;
+  cursor: pointer;
+}
+
+/* first section */
+.recommend-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 1050px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.recommend_text {
+  font-size: var(--xlarge-font);
+  margin-top: 35px;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.recommend_items {
+  display: flex;
+}
+
+.recommend_item img:nth-child(1) {
+  width: 255px;
+  margin-right: 10px;
+  cursor: pointer;
+  /* 이런 말도 안되는 픽셀을 주는 게 맞나 */
+}
+
+.recommend_items .item_title {
+  margin: 5px 0px;
+  width: 250px;
+}
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price #discount {
+  color: rgb(240, 87, 87);
+  margin-right: 5px;
+}
+
+#original_price {
+  font-size: var(--small-font);
+  color: var(--gray-color);
+  text-decoration: line-through;
+}
+
+.prevBtn2 {
+  position: absolute;
+  top: 260px;
+  cursor: pointer;
+}
+
+.nextBtn2 {
+  position: absolute;
+  top: 260px;
+  right: 0;
+  cursor: pointer;
+}
+
+/* oneday section 일일특가 */
+
+.oneday_container {
+  width: 1050px;
+  display: flex;
+  margin: 50px 0px;
+}
+
+.oneday {
+  width: 34%;
+}
+
+.oneday_title {
+  font-size: var(--xlarge-font);
+}
+
+.oneday_smallText {
+  color: var(--gray-color);
+  font-size: var(--medium-font);
+}
+
+.oneday_items {
+  width: 66%;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  font-size: var(--xxlarge-font);
+  font-family: "Nanum Gothic", sans-serif;
+  margin: 30px 0px;
+}
+
+.timer img {
+  width: 10%;
+  margin-right: 10px;
+}
+
+.oneday_xsmallText {
+  color: rgb(180, 180, 180);
+  font-size: var(--small-font);
+}
+
+.oneday_items img {
+  width: 100%;
+}
+
+.oneday_items p {
+  color: var(--gray-color);
+  font-size: var(--small-font);
+  margin: 5px 0px;
+}
+
+.oneday_items #discount,
+.oneday_items #real_price {
+  font-size: var(--large-font);
+  margin: 3px 10px 3px 0px;
+}
+
+/* main page: footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs {
+  width: 525px;
+  margin: 20px 0px;
+}
+
+.footer_top {
+  display: flex;
+  border-top: 0.5px solid rgb(220, 220, 220);
+}
+
+.cs_call {
+  display: flex;
+  margin-top: 15px;
+}
+
+.cs_call .cs_number {
+  font-size: var(--xlarge-font);
+  margin-right: 15px;
+}
+
+.cs button {
+  width: 130px;
+  height: 40px;
+  border: 1px solid rgb(228, 228, 228);
+  text-align: center;
+  font-size: var(--small-font);
+  margin-right: 15px;
+}
+.cs_kakao {
+  display: flex;
+  margin-top: 15px;
+}
+
+.cs_1 {
+  display: flex;
+  margin-top: 15px;
+}
+
+.cs_bigorder {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.cs_detailtext {
+  font-size: var(--small-font);
+}
+.cs span {
+  color: var(--gray-color);
+}
+
+.introduce {
+  width: 525px;
+}
+
+.introduce_items {
+  display: flex;
+  margin: 20px 0px 25px 0px;
+  font-size: var(--small-font);
+}
+
+.introduce_content {
+  margin-right: 15px;
+}
+
+.introduce_detail p {
+  margin-top: 5px;
+  color: var(--gray-color);
+  font-size: var(--xsmall-font);
+}
+
+.introduce_detail a {
+  color: var(--main-purple);
+}
+
+.footer_bottom {
+  border-top: 0.5px solid rgb(220, 220, 220);
+  width: 1050px;
+}
+
+.footer_certification {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_certification li {
+  font-size: 10px;
+  margin: 10px;
+  color: var(--gray-color);
+}
+
+.footer_rights {
+  padding: 20px 0px 30px 0px;
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  color: var(--gray-color);
+}
+
+/* signup page */
+.main_login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup_title {
+  width: 650px;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.signup_title h1 {
+  font-size: var(--xlarge-font);
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+}
+
+.signup_title .essential_input {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--xsmall-font);
+  color: rgb(82, 82, 82);
+  margin: 10px 0px;
+}
+
+.signup .star {
+  color: rgb(228, 56, 56);
+  margin: 1px;
+}
+
+.signup_form {
+  width: 650px;
+  border-bottom: 1px solid black;
+}
+.signup_form p {
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+}
+
+.signup_form p > label {
+  width: 23%;
+  /* background-color: grey; */
+  font-size: var(--small-font);
+  margin-left: 10px;
+}
+
+.signup_form p > input {
+  width: 50%;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  font-size: var(--small-font);
+  padding: 13px;
+}
+
+.signup_form p > input:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+.signup_form p > input::placeholder {
+  color: rgb(204, 204, 204);
+}
+
+.signup_form p .dup_check {
+  border: 1px solid var(--main-purple);
+  color: var(--main-purple);
+  padding: 11.5px 30px;
+  font-size: var(--small-font);
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.click_more {
+  font-size: var(--xsmall-font);
+  margin: -5px 0px 30px 25%;
+  color: rgb(73, 73, 73);
+}
+#click_more_id,
+#click_more_pw,
+#click_more_pwc {
+  display: none;
+}
+
+#address {
+  display: flex;
+  justify-content: center;
+  color: var(--main-purple);
+  background-color: white;
+  border: 1px solid var(--main-purple);
+  font-size: var(--small-font);
+  width: 50%;
+  padding: 11px;
+  border-radius: 4px;
+}
+
+.address_more {
+  font-size: var(--xsmall-font);
+  margin: -5px 0px 30px 25%;
+  color: rgb(73, 73, 73);
+}
+
+.gender > div {
+  background-color: yellow;
+}
+
+/* login page */
+.login {
+  margin: 50px 0px;
+}
+
+.login h1 {
+  display: flex;
+  justify-content: center;
+  font-size: var(--large-font);
+  margin: 30px 0px;
+}
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginform > input {
+  width: 300px;
+  font-size: var(--small-font);
+  padding: 15px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 3px;
+  margin: 5px 0px;
+}
+
+.loginform > input:focus {
+  /* outline: 1px solid black; outline으로 사용하면 radios 가 설정되지 않음 */
+  outline: none;
+  box-shadow: 0 0 0 0.5px black;
+}
+
+.find_account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--xsmall-font);
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.find_account input[type="checkbox"] {
+  display: none;
+}
+
+.find_account input[type="checkbox"] + label {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--gray-color);
+  border-radius: 3px;
+}
+
+.find_account input[type="checkbox"]:checked + label {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-purple);
+  border: 1px solid var(--main-purple);
+}
+.secure_check {
+  display: flex;
+  align-items: center;
+}
+
+.secure_check label {
+  margin-right: 5px;
+}
+
+.loginform > button,
+.loginform .goSignup {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  font-size: var(--medium-font);
+  background-color: var(--main-purple);
+  color: white;
+  padding: 15px;
+  margin: 5px 0px;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.loginform .goSignup {
+  background-color: white;
+  color: var(--main-purple);
+}
