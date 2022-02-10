@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마켓컬리 :: 내일의 장보기,마켓컬리</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <!-- header 부분. 어려운 점 : 적절한 class or id name 을 부여하는 것이 어려움 -->
+    <a class="pop" href="event.html"
+      >지금 가입하고 인기상품 <b>100원</b>에 받아가세요!</a
+    >
+    <header>
+      <div class="info">
+        <img class="info_delivery" src="./image/delivery_210801.png" />
+        <ul class="info_right">
+          <li><a href="signup.html">회원가입</a></li>
+          <li><a href="login.html">로그인</a></li>
+          <li class="info_cc">
+            고객센터
+            <div class="info_cclist">
+              <ul>
+                <li>공지사항</li>
+                <li>자주하는 질문</li>
+                <li>1:1 상담</li>
+                <li>대량주문 문의</li>
+                <li>상품제안</li>
+                <li>에코포장 이벤트</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="mainlogo">
+        <a href="index.html"><img src="./image/mainlogo.jpeg" /></a>
+      </div>
+      <ul class="categories">
+        <li>
+          <img class="icon_all" src="./image/icon_all_cate.png" />전체 카테고리
+        </li>
+        <li>신상품</li>
+        <li>베스트</li>
+        <li>알뜰쇼핑</li>
+        <li>특가/혜택</li>
+        <li>
+          <div class="search">
+            <input type="text" placeholder="검색어를 입력해주세요" />
+            <img src="./image/ico_search.png" />
+          </div>
+        </li>
+        <ul class="categories_right">
+          <li id="delivery_setting">
+            <img src="./image/ico_delivery_setting.svg" />
+          </li>
+          <li id="heart"><img src="./image/btn-heart-off.svg" /></li>
+          <li id="cart"><img src="./image/ico_cart.svg" /></li>
+        </ul>
+      </ul>
+    </header>
+    <!-- main : 슬라이드부터 footer 전까지 -->
+    <main class="main">
+      <!-- 오른쪽 퀵 네비게이션 바 -->
+      <div class="quick_nav">
+        <div class="quick_pic">
+          <img src="./image/quick_nav.png" />
+        </div>
+        <div class="quick_text">
+          <ul>
+            <li>등급별 혜택</li>
+            <li>레시피</li>
+            <li>베스트 후기</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="slide_box">
+        <div class="slide_list">
+          <img
+            class="slide_item"
+            id="copyLast"
+            src="./image/slide9"
+            alt="slide9"
+          />
+          <img class="slide_item" src="./image/slide1" alt="slide1" />
+          <img class="slide_item" src="./image/slide2" alt="slide2" />
+          <img class="slide_item" src="./image/slide3" alt="slide3" />
+          <img class="slide_item" src="./image/slide4" alt="slide4" />
+          <img class="slide_item" src="./image/slide5" alt="slide5" />
+          <img class="slide_item" src="./image/slide6" alt="slide6" />
+          <img class="slide_item" src="./image/slide7" alt="slide7" />
+          <img class="slide_item" src="./image/slide8" alt="slide8" />
+          <img class="slide_item" src="./image/slide9" alt="slide9" />
+          <img
+            class="slide_item"
+            id="copyFirst"
+            src="./image/slide1"
+            alt="slide1"
+          />
+        </div>
+        <button class="prevBtn"><img src="./image/prevBtn.svg" /></button>
+        <button class="nextBtn"><img src="./image/nextBtn.svg" /></button>
+      </section>
+
+      <!-- 두번째 캐러셀 슬라이드 -->
+      <section class="recommend-section">
+        <h2 class="recommend_text">이 상품 어때요?</h2>
+        <ul class="recommend_items">
+          <li class="recommend_item">
+            <img src="./image/recommend-item1" />
+            <div class="item_title">
+              [맛있는] 담금초 선물세트와 예쁜 잔 300ml * 5개입
+            </div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item2" />
+            <div class="item_title">
+              [PUKKA] love 티백 사랑하는 사람에게 선물하세요
+            </div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item3" />
+            <div class="item_title">
+              [생강낙원] 목에 좋지만 알싸한 맛이 나는 생강차청
+            </div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item4" />
+            <div class="item_title">[KF365] 코로나가 너무 심해졌어</div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item5" />
+            <div class="item_title">[TEAZEN] 건강해지는 비밀 콤부차 레몬맛</div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item6" />
+            <div class="item_title">[정다운] 허브를 담은 훈제오리</div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item7" />
+            <div class="item_title">[맛있겠다] 맛있어보이는 삼겹살 800g</div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item8" />
+            <div class="item_title">
+              [풀무원] 식물성 단백질 두부텐더, 다들 비건을 시작해보세요 환경과
+              동물을 위해서
+            </div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item9" />
+            <div class="item_title">[고소한] 아몬드유 100개입</div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item10" />
+            <div class="item_title">
+              [우리밀] 우리밀로 만든 튀김가루 부침가루 세트
+            </div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item11" />
+            <div class="item_title">[ZINC] 건강에 좋은 솔가 아연 50"</div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+          <li class="recommend_item">
+            <img src="./image/recommend-item12" />
+            <div class="item_title">
+              [새로 사야하는데] 후라이팬 스몰 미디움 사이즈 2개입 세트
+            </div>
+            <div class="price">
+              <div id="discount"><b>5%</b></div>
+              <div id="real_price"><b>1 원</b></div>
+            </div>
+            <div id="original_price">1</div>
+          </li>
+        </ul>
+
+        <button class="prevBtn2">
+          <img src="./image/carousel2_left.svg" />
+        </button>
+        <button class="nextBtn2">
+          <img src="./image/carousel2_right.svg" />
+        </button>
+      </section>
+
+      <!-- 일일특가 -->
+      <section class="oneday_section">
+        <div class="oneday_container">
+          <div class="oneday">
+            <h2 class="oneday_title">일일특가</h2>
+            <h3 class="oneday_smallText">24시간 한정특가</h3>
+            <div class="timer">
+              <img src="./image/clock.png" />
+              <div class="hour"><b>0</b></div>
+              :
+              <div class="min"><b>0</b></div>
+              :
+              <div class="sec"><b>0</b></div>
+            </div>
+            <p class="oneday_xsmallText">망설이면 늦어요!</p>
+          </div>
+          <div class="oneday_items">
+            <li class="oneday_item">
+              <img src="./image/oneday_item.jpg" />
+              <p>학교 앞 분식집에서 먹던 그 맛</p>
+              <div class="item_title">[금미옥] 쌀 떡볶이와 깻잎 김말이</div>
+              <div class="price">
+                <div id="discount"><b>5%</b></div>
+                <div id="real_price"><b>10원</b></div>
+                <div id="original_price">10,000</div>
+              </div>
+            </li>
+
+            <div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer_top">
+        <div class="cs">
+          <h3>고객행복센터</h3>
+          <div class="cs_call">
+            <div class="cs_number"><b>1644-1107</b></div>
+            <div class="cs_detailtext">
+              365고객센터<br /><span>오전 7시 - 오후 7시</span>
+            </div>
+          </div>
+          <div class="cs_kakao">
+            <button>카카오톡 문의</button>
+            <div class="cs_detailtext">
+              365고객센터<br /><span>오전 7시 - 오후 7시</span>
+            </div>
+          </div>
+          <div class="cs_1">
+            <button>1:1문의</button>
+            <div class="cs_detailtext">
+              24시간 접수 가능<br /><span
+                >고객센터 운영시간에 순차적으로 답변해드리겠습니다.</span
+              >
+            </div>
+          </div>
+          <div class="cs_bigorder">
+            <button>대량주문 문의</button>
+            <div class="cs_detailtext">
+              <span>비회원의 경우 메일로 문의바랍니다.</span>
+            </div>
+          </div>
+        </div>
+        <div class="introduce">
+          <ul class="introduce_items">
+            <li class="introduce_content">컬리소개</li>
+            <li class="introduce_content">컬리소개영상</li>
+            <li class="introduce_content">인재채용</li>
+            <li class="introduce_content">이용약관</li>
+            <li class="introduce_content"><b>개인정보처리방침</b></li>
+            <li class="introduce_content">이용안내</li>
+          </ul>
+          <div class="introduce_detail">
+            <p>
+              법인명(상호) : 주식회사 컬리 | 사업자등록번호 : 261-81-23456
+              <a>사업자정보 확인</a>
+            </p>
+            <p>
+              통신판매업: 제 2018-서울강남-01456호 | 개인정보보호책임자 : 박지혜
+            </p>
+            <p>
+              주소: 서울특별시 강남구 테헤란로 133, 18층(역삼동) | 대표이사 :
+              박지혜
+            </p>
+            <p>
+              입점문의: <a>입점문의하기</a> | 마케팅제휴 :
+              <a>dsdfd@gmail.com</a>
+            </p>
+            <p>채용문의: <a>recruit@dfsdfds.com</a></p>
+            <p>팩스: 080-3423-2342 | 이메일 : <a>dsfsdf@fdsdf</a></p>
+            <p>대량주문 문의: dfjksldf@nave.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <ul class="footer_certification">
+          <li>[인증범위]마켓컬리 쇼핑몰 서비스 개발 운영</li>
+          <li>개인정보보호 우수 웹사이트 선정</li>
+          <li>
+            고객님의 안전거래를 위해 어쩌구 저쩌구 하고 이런저런 열심히 노력하고
+            있습니다.
+          </li>
+        </ul>
+      </div>
+      <div class="footer_rights">
+        마켓컬리에서 판매되는 상품 중에는 마켓멀리에 입점한 개별 판매자가
+        판매하는 마켓플레이스(오픈마켓)상품들이 포함되어있습니다.<br />
+        마켓플레이스 상품의 경우는 컬리는 통신판매중개자로서 통신판매의 당사자가
+        아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을
+        부담하지 않습니다.<br /><br />
+        © KURLY CORP. ALL RIGHTS RESERVED
+      </div>
+    </footer>
+  </body>
+</html>
