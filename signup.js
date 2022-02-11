@@ -19,6 +19,23 @@ const addEventBox = document.querySelector(".add_event_box");
 const eventName = document.getElementById("event");
 const eventInput = document.querySelector(".event_input");
 
+//나 따라다니는 퀵 네비바
+const quick = document.querySelector(".quick_nav");
+//회원가입 화면은 메인에 비해 좀 위에 위치하기 때문에 미리 올려줌
+quick.style.transform = `translateY(${scrollY - 200}px)`;
+window.addEventListener("scroll", () => {
+  let scrollY = window.scrollY;
+
+  if (scrollY >= 0) {
+    quick.style.transform = `translateY(${scrollY - 200}px)`;
+    quick.style.transition = `transform 0.4s ease-out`;
+  } else {
+    quick.style.transform = "translateY(0px)";
+    quick.style.transition = `transform 0.4s ease-out`;
+  }
+});
+
+// focus 시
 id.addEventListener("focus", () => {
   moreId.style.display = "flex";
 });
