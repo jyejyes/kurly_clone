@@ -1,3 +1,5 @@
+"use strict";
+
 const carouselSlide = document.querySelector(".slide_list");
 const carouselContents = document.querySelectorAll(".slide_item");
 
