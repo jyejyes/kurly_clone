@@ -127,13 +127,13 @@ const hourTimer = document.querySelector(".hour");
 const minTimer = document.querySelector(".min");
 const secTimer = document.querySelector(".sec");
 
-// const hour = 24;
+// const hour = 23;
 // const min = 59;
 // const sec = 59;
 
 setInterval(() => {
   const date = new Date();
-  let showHour = 24 - date.getHours();
+  let showHour = 23 - date.getHours();
   let showMin = 59 - date.getMinutes();
   let showSec = 59 - date.getSeconds();
 

@@ -212,6 +212,7 @@ header {
 }
 
 .quick_text ul {
+  background-color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -498,9 +499,10 @@ footer {
 }
 
 /* signup page */
-.main_login {
+.main_signup {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -539,80 +541,133 @@ footer {
 .signup_form {
   width: 650px;
   border-bottom: 1px solid black;
-}
-.signup_form p {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 15px 0px;
 }
 
-.signup_form p > label {
-  width: 23%;
-  /* background-color: grey; */
-  font-size: var(--small-font);
-  margin-left: 10px;
+.signup_form form {
+  width: 100%;
 }
 
-.signup_form p > input {
-  width: 50%;
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 4px;
-  font-size: var(--small-font);
+table {
+  width: 100%;
+}
+
+table th {
   padding: 13px;
+  text-align: start;
+  font-size: var(--small-font);
+  position: absolute;
+  transform: translateY(10px);
+  /* border: 1px solid blue; */
 }
 
-.signup_form p > input:focus {
+table td {
+  width: 77%;
+  padding: 10px;
+}
+
+table tr:nth-child(-n + 7) input,
+table .addBtn,
+table .birthday,
+.event_input {
+  width: 68%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 4px;
+  padding: 14px;
+  font-size: var(--small-font);
+  margin-right: 1%;
+}
+
+table tr:nth-child(-n + 7) input:focus {
   outline: none;
   border: 1px solid black;
 }
 
-.signup_form p > input::placeholder {
-  color: rgb(204, 204, 204);
-}
-
-.signup_form p .dup_check {
-  border: 1px solid var(--main-purple);
-  color: var(--main-purple);
-  padding: 11.5px 30px;
-  font-size: var(--small-font);
-  margin-left: 10px;
-  border-radius: 4px;
-}
-
-.click_more {
+table td p,
+.add_event_box {
   font-size: var(--xsmall-font);
-  margin: -5px 0px 30px 25%;
-  color: rgb(73, 73, 73);
-}
-#click_more_id,
-#click_more_pw,
-#click_more_pwc {
+  margin: 7px 0px;
+  color: rgb(82, 82, 82);
   display: none;
 }
 
-#address {
+table td .more_add {
   display: flex;
-  justify-content: center;
-  color: var(--main-purple);
-  background-color: white;
-  border: 1px solid var(--main-purple);
+}
+
+table .address {
+  margin-bottom: 10px;
+}
+
+.address_box {
+  display: none;
+}
+
+.birthday > input {
+  width: 31%;
+  border: none;
   font-size: var(--small-font);
-  width: 50%;
-  padding: 11px;
+  text-align: center;
+}
+
+table .addBtn {
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid var(--main-purple);
+  border-radius: 4px;
+  padding: 13px;
+  color: var(--main-purple);
+  cursor: pointer;
+}
+
+table a {
+  display: inline-block;
+  width: 23%;
+  border: 1px solid var(--main-purple);
+  padding: 12px 0px;
+  border-radius: 4px;
+  color: var(--main-purple);
+  font-size: var(--small-font);
+  font-weight: bold;
+  text-align: center;
+}
+
+table .gender,
+table .add_input {
+  width: 68%;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--small-font);
+}
+
+table input::placeholder {
+  color: rgb(196, 196, 196);
+}
+
+.signup_btn {
+  background-color: var(--main-purple);
+  margin: 50px;
+  color: white;
+  padding: 13px;
+  width: 15%;
+  text-align: center;
   border-radius: 4px;
 }
 
-.address_more {
-  font-size: var(--xsmall-font);
-  margin: -5px 0px 30px 25%;
-  color: rgb(73, 73, 73);
-}
-
-.gender > div {
-  background-color: yellow;
-}
-
 /* login page */
+
+.main_login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login {
   margin: 50px 0px;
 }

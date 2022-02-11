@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 : 마켓컬리</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="signup2.js" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="info">
+        <img class="info_delivery" src="./image/delivery_210801.png" />
+        <ul class="info_right">
+          <li><a href="signup.html">회원가입</a></li>
+          <li><a href="login.html">로그인</a></li>
+          <li class="info_cc">
+            고객센터
+            <div class="info_cclist">
+              <ul>
+                <li>공지사항</li>
+                <li>자주하는 질문</li>
+                <li>1:1 상담</li>
+                <li>대량주문 문의</li>
+                <li>상품제안</li>
+                <li>에코포장 이벤트</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="mainlogo">
+        <a href="index.html"><img src="./image/mainlogo.jpeg" /></a>
+      </div>
+      <ul class="categories">
+        <li>
+          <img class="icon_all" src="./image/icon_all_cate.png" />전체 카테고리
+        </li>
+        <li>신상품</li>
+        <li>베스트</li>
+        <li>알뜰쇼핑</li>
+        <li>특가/혜택</li>
+        <li>
+          <div class="search">
+            <input type="text" placeholder="검색어를 입력해주세요" />
+            <img src="./image/ico_search.png" />
+          </div>
+        </li>
+        <ul class="categories_right">
+          <li id="delivery_setting">
+            <img src="./image/ico_delivery_setting.svg" />
+          </li>
+          <li id="heart"><img src="./image/btn-heart-off.svg" /></li>
+          <li id="cart"><img src="./image/ico_cart.svg" /></li>
+        </ul>
+      </ul>
+    </header>
+
+    <!-- 회원가입창 -->
+    <main class="main_signup">
+      <div class="signup">
+        <div class="signup_title">
+          <h1>회원가입</h1>
+          <div class="essential_input">
+            <span class="star">*</span>필수입력사항
+          </div>
+        </div>
+        <div class="signup_form">
+          <form action="#" method="POST">
+            <table>
+              <tbody>
+                <tr>
+                  <th>아이디<span class="star">*</span></th>
+                  <td>
+                    <input
+                      id="id"
+                      type="text"
+                      placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"
+                    />
+                    <a>중복확인</a>
+                    <p id="more_id">
+                      • 6자 이상의 영문 혹은 영문과 숫자를 조합<br />
+                      • 아이디 중복확인
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>비밀번호<span class="star">*</span></th>
+                  <td>
+                    <input
+                      id="password"
+                      type="password"
+                      placeholder="비밀번호를 입력해주세요"
+                    />
+                    <p id="more_pw">
+                      • 10자 이상 입력<br />
+                      • 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상
+                      조합<br />
+                      • 동일한 숫자 3개 이상 연속 사용 불가
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>비밀번호확인<span class="star">*</span></th>
+                  <td>
+                    <input
+                      id="passwordCheck"
+                      type="password"
+                      placeholder="비밀번호를 한번 더 입력해주세요"
+                    />
+                    <p id="more_pwc">• 동일한 비밀번호를 입력해주세요.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>이름<span class="star">*</span></th>
+                  <td>
+                    <input type="text" placeholder="이름을 입력해주세요" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>이메일<span class="star">*</span></th>
+                  <td>
+                    <input type="text" placeholder="예: dsfdsf@gmail.com" />
+                    <a>중복확인</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>휴대폰<span class="star">*</span></th>
+                  <td>
+                    <input type="text" placeholder="숫자만 입력해주세요" />
+                  </td>
+                </tr>
+                <tr>
+                  <th>주소<span class="star">*</span></th>
+                  <td>
+                    <div class="address_box">
+                      <input
+                        type="text"
+                        class="address"
+                        id="address_1"
+                        placeholder="주소"
+                        readonly]
+                      />
+                      <a href="#" class="address" id="researchBtn">재검색</a>
+                      <input
+                        type="text"
+                        class="address"
+                        id="address_2"
+                        placeholder="상세주소를 입력해주세요"
+                      />
+                    </div>
+
+                    <button type="button" class="addBtn">🔍 주소 검색</button>
+                    <p class="more_add">
+                      배송지에 따라 물품이 다를 수 있습니다.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>성별</th>
+                  <td>
+                    <div class="gender">
+                      <div>
+                        <input type="radio" id="woman" name="gender" />
+                        <label for="woman">여성</label>
+                      </div>
+
+                      <div>
+                        <input type="radio" id="man" name="gender" />
+                        <label for="man">남성</label>
+                      </div>
+                      <div>
+                        <input
+                          type="radio"
+                          id="nocheck"
+                          name="gender"
+                          checked
+                        />
+                        <label for="nocheck">선택 안함</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>생년월일</th>
+                  <td>
+                    <div class="birthday">
+                      <input type="text" placeholder="YYYY" />/
+                      <input type="text" placeholder="MM" />/
+                      <input type="text" placeholder="DD" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>추가입력 사항</th>
+                  <td>
+                    <div class="add_input">
+                      <div>
+                        <input
+                          type="radio"
+                          id="recommend_id"
+                          name="add_input"
+                        />
+                        <label for="recommend_id">추천인 아이디</label>
+                      </div>
+
+                      <div>
+                        <input type="radio" id="event" name="add_input" />
+                        <label for="event">참여 이벤트명</label>
+                      </div>
+                    </div>
+                    <div class="add_event_box"> 
+                      <input class="event_input"
+                      type="text"
+                      placeholder="추천인 아이디를 입력해주세요."
+                    />
+                    <p class="more_add">추천인 아이디와 참여 이벤트명 중 하나만 선택 가능합니다.<br>가입 이후, 수정이 불가합니다.<br>대소문자 및 띄어쓰기에 유의해주세요.</bt></p>
+                    </div>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <button class="signup_btn">가입하기</button>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer_top">
+        <div class="cs">
+          <h3>고객행복센터</h3>
+          <div class="cs_call">
+            <div class="cs_number"><b>1644-1107</b></div>
+            <div class="cs_detailtext">
+              365고객센터<br /><span>오전 7시 - 오후 7시</span>
+            </div>
+          </div>
+          <div class="cs_kakao">
+            <button>카카오톡 문의</button>
+            <div class="cs_detailtext">
+              365고객센터<br /><span>오전 7시 - 오후 7시</span>
+            </div>
+          </div>
+          <div class="cs_1">
+            <button>1:1문의</button>
+            <div class="cs_detailtext">
+              24시간 접수 가능<br /><span
+                >고객센터 운영시간에 순차적으로 답변해드리겠습니다.</span
+              >
+            </div>
+          </div>
+          <div class="cs_bigorder">
+            <button>대량주문 문의</button>
+            <div class="cs_detailtext">
+              <span>비회원의 경우 메일로 문의바랍니다.</span>
+            </div>
+          </div>
+        </div>
+        <div class="introduce">
+          <ul class="introduce_items">
+            <li class="introduce_content">컬리소개</li>
+            <li class="introduce_content">컬리소개영상</li>
+            <li class="introduce_content">인재채용</li>
+            <li class="introduce_content">이용약관</li>
+            <li class="introduce_content"><b>개인정보처리방침</b></li>
+            <li class="introduce_content">이용안내</li>
+          </ul>
+          <div class="introduce_detail">
+            <p>
+              법인명(상호) : 주식회사 컬리 | 사업자등록번호 : 261-81-23456
+              <a>사업자정보 확인</a>
+            </p>
+            <p>
+              통신판매업: 제 2018-서울강남-01456호 | 개인정보보호책임자 : 박지혜
+            </p>
+            <p>
+              주소: 서울특별시 강남구 테헤란로 133, 18층(역삼동) | 대표이사 :
+              박지혜
+            </p>
+            <p>
+              입점문의: <a>입점문의하기</a> | 마케팅제휴 :
+              <a>dsdfd@gmail.com</a>
+            </p>
+            <p>채용문의: <a>recruit@dfsdfds.com</a></p>
+            <p>팩스: 080-3423-2342 | 이메일 : <a>dsfsdf@fdsdf</a></p>
+            <p>대량주문 문의: dfjksldf@nave.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <ul class="footer_certification">
+          <li>[인증범위]마켓컬리 쇼핑몰 서비스 개발 운영</li>
+          <li>개인정보보호 우수 웹사이트 선정</li>
+          <li>
+            고객님의 안전거래를 위해 어쩌구 저쩌구 하고 이런저런 열심히 노력하고
+            있습니다.
+          </li>
+        </ul>
+      </div>
+      <div class="footer_rights">
+        마켓컬리에서 판매되는 상품 중에는 마켓멀리에 입점한 개별 판매자가
+        판매하는 마켓플레이스(오픈마켓)상품들이 포함되어있습니다.<br />
+        마켓플레이스 상품의 경우는 컬리는 통신판매중개자로서 통신판매의 당사자가
+        아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을
+        부담하지 않습니다.<br /><br />
+        © KURLY CORP. ALL RIGHTS RESERVED
+      </div>
+    </footer>
+  </body>
+</html>
