@@ -67,12 +67,6 @@ const prevBtn2 = document.querySelector(".prevBtn2");
 const nextBtn2 = document.querySelector(".nextBtn2");
 let count2 = 0;
 
-// //ul(items) 전체 길이 구하기 (없어도 될 ㄹ것 같아서 일단 )
-// const itemnum = recommend_item.length;
-// recommend_items.style.width = `${
-//   (recommend_item[0].offsetWidth + 10) * itemnum
-// }px`;
-
 if (count2 == 0) {
   prevBtn2.style.display = "none";
 }

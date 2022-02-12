@@ -289,11 +289,19 @@ header {
   display: flex;
 }
 
-.recommend_item img:nth-child(1) {
+.recommend_item {
   width: 255px;
   margin-right: 10px;
+}
+
+.recommend_item img:nth-child(1) {
+  width: 255px;
   cursor: pointer;
   /* 이런 말도 안되는 픽셀을 주는 게 맞나 */
+}
+
+.recommend_item img:nth-child(1):hover {
+  transform: scale(1.03);
 }
 
 .recommend_items .item_title {
@@ -643,6 +651,26 @@ table .add_input {
   align-items: center;
   justify-content: space-between;
   font-size: var(--small-font);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 25px;
+  padding-left: 30px;
+  background: url("./image/ico_checkbox.svg") left/22px no-repeat;
+}
+
+input[type="radio"]:checked + label {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 25px;
+  padding-left: 30px;
+  background: url("./image/ico_checkbox_checked.svg") left/22px no-repeat;
 }
 
 table input::placeholder {
